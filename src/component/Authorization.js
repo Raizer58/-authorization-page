@@ -4,7 +4,6 @@ import actionAuthorization from "../actions/action-authorization";
 import actionSomeReducer from "../actions/action-some-reducer";
 
 const loginUser = async user => {
-  console.log(JSON.stringify(user));
   const rawResponse = await fetch(
     "https://afternoon-falls-25894.herokuapp.com/signin", {
       method: "POST",
@@ -28,7 +27,6 @@ const Authorization = () => {
     event.preventDefault();
     const user = await loginUser({ email, password });
     dispatch(actionAuthorization.userLogIn(user));
-    dispatch(actionSomeReducer.incriment());
   };
 
   return (

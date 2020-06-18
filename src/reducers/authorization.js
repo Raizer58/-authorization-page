@@ -13,6 +13,6 @@ export default function authorization(state = defaultUser, action) {
         user: false
       };
     default:
-      return defaultUser;
+      return state;
   }
 }
